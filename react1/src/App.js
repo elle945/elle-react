@@ -29,10 +29,34 @@ import FormHandling from './component/FormHandling'
 import FormHandlingValidation from './component/FormHandlingValidation'
 import Inline from './component/Inline'
 import StyledComponents from './component/StyledComponents'
+import { Routes, Route, Link } from 'react-router-dom'
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
+import ErrorPage from './pages/ErrorPage'
+import { UserContext } from './pages/UserContext'
 
 function App() {
     return (
         <div className="App">
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to={'/'}>Home</Link>
+                        </li>
+                        <li>
+                            <Link to={'/about'}>About</Link>
+                        </li>
+                    </ul>
+                </nav>
+            <UserContext.Provider value={"Hej"}>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/products:id" element={<Products />} />
+                <Route path="*" element={<ErrorPage />} />
+            </Routes>
+            </UserContext.Provider>
             {/* Här skapade vi en fuctional component med interpolering */}
             <Functional />
             {/* Shift+alt+A gör kommentarer */}

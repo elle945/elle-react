@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client'
 import '../src/App.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
+import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <React.StrictMode>
+         {/* Wrappar router runt här för att fungera på hela sidan */}
+        <BrowserRouter>
         <App />
+        </BrowserRouter>
     </React.StrictMode>
 )
 
