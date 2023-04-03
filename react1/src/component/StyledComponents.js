@@ -4,10 +4,10 @@ import styled from 'styled-components'
 
 function StyledComponents() {
     function testFunction() {
-        return alert('hej')
+        return console.log('Hej')
     }
     function testFunction2() {
-        return alert('Allihopa')
+        return console.log('alla')
     }
     return (
         <div>
@@ -24,6 +24,9 @@ export default StyledComponents
 
 const Wrap = styled.div`
     background-color: yellowgreen;
+    &:hover {
+        background-color: red;
+    }
 `
 const ButtonLeft = styled.button`
     background: transparent;
@@ -34,6 +37,9 @@ const ButtonLeft = styled.button`
     margin: 0 1em;
     padding: 0.25em 1em;
     cursor: pointer;
+    &:hover {
+        background-color: grey;
+    }
 `
 const ButtonRight = styled(ButtonLeft)`
     color: black;
